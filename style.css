@@ -1,3 +1,23 @@
-/* canvas{
+canvas{
     background-color: blue;
-} */
+}
+body{
+    display: flex;justify-content: center;
+    
+}
+canvas{
+    border-style:double ;
+
+}
+.pontos{
+    margin-left: 10px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    
+}
+.pontos p{
+    background-color: blueviolet;
+    padding: 10px;
+    border-radius: 50px;
+}
