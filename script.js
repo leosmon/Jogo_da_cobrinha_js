@@ -1,13 +1,18 @@
 
+function iniciar (){
+
+// js da barra de pontuação e botão de reiniciar//
+var btn = document.querySelector("button")
+btn.style.visibility ="hidden"
 
 
-
-// js da barra de pontuação//
-
-var contador = document.querySelector('.ponto');
+ var contador = document.querySelector('.ponto');
+ contador.textContent = 0
+var ultima = document.querySelector('.ultima')
 
 function addPonto(){
-    var numero = parseInt(contador.textContent) + 1;
+    
+   var numero = parseInt(contador.textContent) + 1;
     contador.textContent = numero;
 }
 //fim da barra de pontuação//
@@ -30,7 +35,7 @@ let food ={
 }
 
 function criarBG() {
-    // context.fillStyle = "lightgreen";
+
     var fundoImg = new Image();
     
     context.fillRect(0, 0, 16 * box, 16 * box);
@@ -54,6 +59,7 @@ function drawFood (){
 }
 
 
+//movimentação //
 document.addEventListener('keydown' , update);
 
 function update(event){
@@ -66,6 +72,10 @@ function update(event){
     
 
 }
+//===============//
+
+
+//função principal do jogo//
 
 function iniciarJogo(){
     
@@ -74,11 +84,22 @@ if(snake[0].x < 0  && direction == "left")snake[0].x =15 * box;
 if(snake[0].y > 15 *box && direction == "down")snake[0].y =0;
 if(snake[0].y < 0  && direction == "up")snake[0].y =15* box;
 
+
+    //condicional de game over//
+
+for(i = 1 ;i < snake.length; i++){
+    if(snake[0].x == snake[i].x && snake[0].y == snake[i].y) {
+        clearInterval(jogo)
+        alert('Game Over')
+        btn.style.visibility ="visible"
+        ultima.textContent = contador.textContent
+    }
+
+}
+
+    
     criarBG();
-    
-    
     drawFood();
-    
     criarCobrinha();
 
 
@@ -111,9 +132,14 @@ if(snake[0].y < 0  && direction == "up")snake[0].y =15* box;
 
  
 }
-
 let jogo = setInterval(iniciarJogo, 150)
+}
+let jogo = setTimeout(iniciar, 1000)
 
 
 
 
+function reiniciar(){
+    
+    let jogo = setTimeout(iniciar, 1000)
+}

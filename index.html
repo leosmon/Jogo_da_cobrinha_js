@@ -10,13 +10,23 @@
     <title>Snake Game</title>
 </head>
 <body>
-    <div class="jogo">
-    <canvas id="snake"  width="512" height="512"></canvas>
-    </div>
-    <div class="pontos">
-        <p>Sua Pontuação : <span class="ponto">0</span></p>
-    </div>
-    <img id="imagem" src="img/fundo-natural-com-paisagem-de-floresta-tropical_23-2148258615.jpg" style="display: none;">
+    <header>
+        <h1>Snake Game</h1>
+    </header>
+
+    <div class="wrapper">
+        
+        <div class="jogo">
+            <canvas id="snake"  width="512" height="512"></canvas>
+        </div>
+
+        <div class="pontos">
+            <p>Ultima Pontuação : <span class="ultima">0</span></p>
+            <p>Sua Pontuação : <span class="ponto">0</span></p>
     
+            <button class="reinicio" onclick="reiniciar()">Reiniciar</button>
+        </div>
+   
+    </div>
 </body>
 </html>

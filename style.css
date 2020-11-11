@@ -1,8 +1,8 @@
-canvas{
-    background-color: blue;
-}
+
 body{
-    display: flex;justify-content: center;
+    display: grid;
+    justify-content: center;
+    align-items: center;
     
 }
 canvas{
@@ -21,3 +21,13 @@ canvas{
     padding: 10px;
     border-radius: 50px;
 }
+.wrapper{
+    display: flex;
+    justify-content: center;
+}
+header{
+    margin-left: 180px ;
+    color: green;
+    
+}
+
